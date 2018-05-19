@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var auth0 = require('auth0-js');
+var auth0 = require('auth0');
 var app = express();
 var PORT = process.env.PORT || 3000;
 
