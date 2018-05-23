@@ -41,33 +41,130 @@
 		<form>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="inputEmail4">First Name</label> <input class="form-control" placeholder="First name" type="text">
+					<label for="validationDefault01">First Name</label> <input class="form-control" id="FirstName" placeholder="First Name" 
+					required type="text">
 				</div>
 				<div class="form-group col-md-6">
-					<label for="inputPassword4">Last Name</label> <input class="form-control" placeholder="Last name" type="text">
+					<label for="validationDefault02">Last Name</label> <input class="form-control" id="LastName" placeholder="Last Name" 
+					required type="text">
 				</div>
-				<div class="form-group col-md-12">
-					<label for="inputEmail4">Email</label> <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
+				<div class="form-group col-md-6">
+					<label for="validationDefault03">Email</label> <input class="form-control" id="Email" placeholder="Email" 
+					required type="email">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="validationDefault04">Password</label> <input class="form-control" id="Password" placeholder="Must be 8-20 characters" 
+					required type="password">
+				</div>
+				<div class="col-md-12">
+					<label for="validationDefault05">Select Team</label> 
+					<select class="form-control" id="Team">
+						<!--$(#Team).val()-->
+						<option selected>
+							Select NFL Team...
+						</option>
+						<option value="cardinals">
+							Arizona Cardinals
+						</option>
+						<option value="falcons">
+							Atlanta Falcons
+						</option>
+						<option value="ravens">
+							Baltimore Ravens
+						</option>
+						<option value="bills">
+							Buffalo Bills
+						</option>
+						<option value="panthers">
+							Carolina Panthers
+						</option>
+						<option value="bears">
+							Chicago Bears
+						</option>
+						<option value="bengels">
+							Cincinnati Bengals
+						</option>
+						<option value="browns">
+							Cleveland Browns
+						</option>
+						<option value="cowboys">
+							Dallas Cowboys
+						</option>
+						<option value="broncos">
+							Denver Broncos
+						</option>
+						<option value="lions">
+							Detroit Lions
+						</option>
+						<option value="packers">
+							Green Bay Packers
+						</option>
+						<option value="texans">
+							Houston Texans
+						</option>
+						<option value="colts">
+							Indianapolis Colts
+						</option>
+						<option value="jaguars">
+							Jacksonville Jaguars
+						</option>
+						<option value="chiefs">
+							Kansas City Chiefs
+						</option>
+						<option value="rams">
+							Los Angeles Rams
+						</option>
+						<option value="chargers">
+							Los Angeles Chargers
+						</option>
+						<option value="dolphins">
+							Miami Dolphins
+						</option>
+						<option value="vikings">
+							Minnesota Vikings
+						</option>
+						<option value="patriots">
+							New England Patriots
+						</option>
+						<option value="saints">
+							New Orleans Saints
+						</option>
+						<option value="giants">
+							New York Giants
+						</option>
+						<option value="jets">
+							New York Jets
+						</option>
+						<option value="raiders">
+							Oakland Raiders
+						</option>
+						<option value="eagles">
+							Philadelphia Eagles
+						</option>
+						<option value="steelers">
+							Pittsburgh Steelers
+						</option>
+						<option value="49ers">
+							San Francisco 49ers
+						</option>
+						<option value="seahawks">
+							Seattle Seahawks
+						</option>
+						<option value="buccaneers">
+							Tampa Bay Buccaneers
+						</option>
+						<option value="titans">
+							Tennessee Titans
+						</option>
+						<option value="redskins">
+							Washington Redskins
+						</option>
+					</select>
 				</div>
 			</div>
-			<form class="form-inline">
-				<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Gender</label> <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-					<option selected>
-						Choose...
-					</option>
-					<option value="1">
-						Male
-					</option>
-					<option value="2">
-						Female
-					</option>
-					<option value="3">
-						I rather not say
-					</option>
-				</select>
-			</form><br>
+			<br>
 			<center>
-				<button class="btn btn-primary" id="signUpButton" type="button">Sign Up</button>
+				<button class="btn btn-primary" type="submit">Submit</button>
 			</center>
 		</form>
     </div>
@@ -76,8 +173,7 @@
 		<div class="container">
 			<p class="m-0 text-center text-white">&copy; Project 2 2018</p>
         </div>
-        
-	</footer>
+	</footer> 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
 	</script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
