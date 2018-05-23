@@ -1,12 +1,27 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var auth0 = require('auth0');
-var app = express();
-var PORT = process.env.PORT || 3000;
+// server.js
 
-app.use(bodyParser.urlencoded({ extended: true}));
-app.use(bodyParser.json());
+const express = require('express');
+const app = express();
+const jwt = require('express-jwt');
+const jwtAuthz = require('express-jwt-authz');
+const jwksRsa = require('jwks-rsa');
 
-app.listen(PORT, function() {
-   console.log("APP listening on PORT " + PORT);
+// Authentication middleware. When used, the
+// Access Token must exist and be verified against
+// the Auth0 JSON Web Key Set
+const checkJwt = jwt({
+  // Dynamically provide a signing key
+  // based on the kid in the header and 
+  // the signing keys provided by the JWKS endpoint.
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: `https://project-2.auth0.com/.well-known/jwks.json`
+  }),
+
+  // Validate the audience and the issuer.
+  audience: '{YOUR_API_IDENTIFIER}',
+  issuer: `https://project-2.auth0.com/`,
+  algorithms: ['RS256']
 });
