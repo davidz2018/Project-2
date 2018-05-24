@@ -1,29 +1,66 @@
-
-
 var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var mysql = require('mysql');
+var db = {};
+
+var routes = require('./routes/index');
+var user = require('./routes/user');
+
 var app = express();
-var jwt = require('express-jwt');
-var jwtAuthz = require('express-jwt-authz');
-var jwksRsa = require('jwks-rsa');
-var PORT = process.env.PORT || 3000;
-var user = require('./routes/user.js');
-var index = require('./routes/index.js');
-var checkJwt = jwt({
 
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: `https://project-2.auth0.com/.well-known/jwks.json`
-  }),
+app.set('views', path.join(__dirname, 'views'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 
-  audience: process.env.AUTH0_CLIENT_ID,
-  issuer: `https://project-2.auth0.com/`,
-  algorithms: ['RS256']
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+    var namespace = param.split('.'),
+    root = namespace.shift(),
+    formParam = root;
+  while(namespace.length) {
+    formParam += '[' + namespace.shift() + ']';
+  }
+  return {
+    param : formParam,
+    msg : msg,
+    value : value,
+  };
+  }
+}));
+
+app.use(flash());
+
+app.use(function (req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
 });
-app.use( user);
-app.use(index);
-app.listen(PORT, function() {
-  console.log("App listening at PORT " + PORT)
-})
+
+app.use('/', routes);
+app.use('/user', user);
+
+app.set('PORT', (process.env.PORT || 3000));
+app.listen(app.get('PORT'), function() {
+  console.log("App listening on port " +app.get('PORT'));
+});
