@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TeamInfo</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+
+        <label for="validationDefault01">Team</label>
+        <input class="form-control" id="locationSearch" placeholder="Not Functional Yet" required type="text">
+      <br>
+      <!-- search button -->
+    <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit" >Hit Enter to Display Sample Results</button>
+
+    <h1 id="title0"></h1>
+    <p id="content"></p>
+    <br>
+    <h1 id="teamName"></h1>
+    <img class="teamLogo" src="" alt="">
+    <br>
+    <h1 id="playerName"></h1>
+    <img class="playerLogo" src="" alt="">
+    
+
+  
+
+
+
+<script type="text/javascript">
+$(document).on("click", "#searchButton", function(event){
+    event.preventDefault();
+    console.log(event);
+
+    var inputChange = $("#locationSearch").val();
+
+    console.log(inputChange);
+
+
+
+    $(function() {
+        //var params = {
+            // Request parameters
+            
+        //};
+
+        var team = inputChange
+      
+        $.ajax({
+            url: "https://api.fantasydata.net/v3/nfl/scores/JSON/NewsByTeam/DET?" + $.param(team),
+            
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","710f03748d36420280526d758e56e062");
+                console.log(xhrObj);
+                console.log(team);
+            },
+            
+            type: "GET",
+            // Request body
+           data: "{body}",
+        })
+        .done(function(data) {
+            console.log(data);
+
+//Attraction 0 
+$("#title0").html("Headline: " + data[0].Title);
+$("#content").html(data[0].Content);
+        
+
+        })
+        .fail(function() {
+            console.log("error");
+        });
+    });
+
+
+      $(function() {
+        var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://api.fantasydata.net/v3/nfl/stats/JSON/Schedules/2018?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","710f03748d36420280526d758e56e062");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            console.log(data)
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+
+     $(function() {
+        var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://api.fantasydata.net/v3/nfl/stats/JSON/Players/DET?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","710f03748d36420280526d758e56e062");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            console.log(data);
+
+            $("#playerName").html(data[6].Name);
+            $(".playerLogo").attr("src", data[6].PhotoUrl);
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+
+       $(function() {
+        var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://api.fantasydata.net/v3/nfl/stats/JSON/AllTeams?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","710f03748d36420280526d758e56e062");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            console.log(data);
+
+            $("#teamName").html(data[11].FullName);
+            $(".teamLogo").attr("src", data[11].WikipediaLogoUrl);
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+})
+</script>
+</body>
+</html>
