@@ -20,11 +20,13 @@ CREATE TABLE sport (
     id INT NOT NULL AUTO_INCREMENT,
     team_name VARCHAR (100) NOT NULL,
     league VARCHAR (100) NOT NULL,
+    PRIMARY KEY (id)
 
-)
+);
 
 CREATE TABLE bars (
     id INT NOT NULL AUTO_INCREMENT,
     barName VARCHAR (100) NOT NULL,
-)
+    PRIMARY KEY (id)
+);
 

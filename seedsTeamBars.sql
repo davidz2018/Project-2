@@ -34,7 +34,7 @@ INSERT INTO bars (barName) VALUES ("Bayside Landing - Pacific Beach");
 INSERT INTO bars (barName) VALUES ("High Dive Bar & Grill - Bay Park");
 INSERT INTO bars (barName) VALUES ("Bub's at the Ballpark - East Village");
 INSERT INTO bars (barName) VALUES ("Barleymash - Gaslamp");
-INSERT INTO bars (barName) VALUES ("Oggi's - numerous San Diego locations")
+INSERT INTO bars (barName) VALUES ("Oggi's - numerous San Diego locations");
 INSERT INTO bars (barName) VALUES ("PB Shore Club - Pacific Beach");
 INSERT INTO bars (barName) VALUES ("Rosie O'Grady's - Normal Heights");
 INSERT INTO bars (barName) VALUES ("Cheers Bar & Grill - Carmel Valley");
