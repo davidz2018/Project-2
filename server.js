@@ -8,11 +8,28 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mysql = require('mysql');
-var db = {};
 
+
+//connect to fans database in mysql
+var connection = mysql.createConnection({
+  host: "localhost",
+  port: 3000,
+
+  user: "root",
+  password: 'BlackTankshark8',
+  database: 'fans'
+});
+
+connection.connect(function(err) {
+  if (err) throw err;
+  start();
+});
+
+//routes 
 var routes = require('./routes/index');
 var user = require('./routes/user');
 
+//init app
 var app = express();
 
 app.set('public', path.join(__dirname, 'public'));

@@ -29,11 +29,11 @@ router.post('/register', function(req, res) {
     var errors = req.validationErrors();
 
     if(errors) {
-        res.render('register', {
+        res.json( {
             errors:errors
         })
     } else{
-        var newUser = new user
+        res.json("Saved to the database, no errors")
     }
 });
 
