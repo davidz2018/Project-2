@@ -1,21 +1,26 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
-router.get('/register', function(req, res) {
-    res.render('register');
+router.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-router.get('/login', function(req, res) {
-    res.render('login');
-});
+
 
 router.post('/register', function(req, res) {
-    var name = req.body.name;
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
     var email =req.body.email;
     var username = req.body.username;
     var password = req.body.password;
+    var team = req.body.team;
+
+    console.log(req.body)
+    console.log(req.body.team)
     
-    req.checkBody('name', 'Name is required').notEmpty();
+    req.checkBody('firstName', 'First name is required').notEmpty();
+    req.checkBody('lastName', 'Last name is required').notEmpty();
     req.checkBody('email', 'Email is required').notEmpty();
     req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('username', 'Username is required').notEmpty();
