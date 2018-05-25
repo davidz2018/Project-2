@@ -9,21 +9,8 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mysql = require('mysql');
 
+var db = require("./models");
 
-//connect to fans database in mysql
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3000,
-
-  user: "root",
-  password: 'BlackTankshark8',
-  database: 'fans'
-});
-
-connection.connect(function(err) {
-  if (err) throw err;
-  start();
-});
 
 //routes 
 var routes = require('./routes/index');
@@ -77,7 +64,8 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/user', user);
 
-app.set('PORT', (process.env.PORT || 3000));
-app.listen(app.get('PORT'), function() {
-  console.log("App listening on port " +app.get('PORT'));
+db.sequelizesync({ force:true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
