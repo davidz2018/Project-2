@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
+var user = require('../models/user');
+
 router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.render('register');
 });
 
 
@@ -25,15 +27,32 @@ router.post('/register', function(req, res) {
     req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('username', 'Username is required').notEmpty();
     req.checkBody('password', 'Password is required').notEmpty();
-    
+    req.checkBody('team', 'Must select a team').notEmpty();
     var errors = req.validationErrors();
 
     if(errors) {
-        res.json( {
-            errors:errors
-        })
+       res.render('register', {
+           error:errors
+       });
+        
     } else{
-        res.json("Saved to the database, no errors")
+       var newUser = new User({
+           firtsName: firstName,
+           lastName: lastName,
+           email: email,
+           username: username,
+           password: password,
+           team: team
+
+       });
+
+       user.createUser(newUser, function(err, user) {
+            if(err) throw err;
+            console.log(user);
+       });
+       req.flash('success_msg', 'You are registered and can now log in');
+
+       res.redirect('/views/userpage')
     }
 });
 
