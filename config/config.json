@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "BlackTankshark8",
+    "password": "prat4lYf!",
     "database": "fans",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

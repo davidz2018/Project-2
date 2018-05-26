@@ -10,7 +10,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var mysql = require('mysql');
 
 var db = require("./models");
-
+var PORT = process.env.PORT || 8080;
 
 //routes 
 var routes = require('./routes/index');
