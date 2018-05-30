@@ -1,32 +1,6 @@
+-- Drops the fans if it exists currently --
 DROP DATABASE IF EXISTS fans;
-
+-- Creates the "fans" database --
 CREATE DATABASE fans;
 
-USE fans;
-
-CREATE TABLE user (
-    id INT NOT NULL AUTO_INCREMENT,
-    firstName VARCHAR (100) NOT NULL,
-    lastName VARCHAR (100) NOT NULL,
-    homeTown VARCHAR (100) NOT NULL,
-    currentCity VARCHAR (100) NOT NULL,
-    favoriteTeam VARCHAR (100) NOT NULL,
-    password VARCHAR (100) NOT NULL,
-    userName VARCHAR (100) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE sport (
-    id INT NOT NULL AUTO_INCREMENT,
-    team_name VARCHAR (100) NOT NULL,
-    league VARCHAR (100) NOT NULL,
-    PRIMARY KEY (id)
-
-);
-
-CREATE TABLE bars (
-    id INT NOT NULL AUTO_INCREMENT,
-    barName VARCHAR (100) NOT NULL,
-    PRIMARY KEY (id)
-);
 

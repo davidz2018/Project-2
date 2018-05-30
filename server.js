@@ -10,6 +10,13 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mysql = require('mysql');
 
+<<<<<<< HEAD
+var db = require("./models");
+var PORT = process.env.PORT || 8080;
+
+//routes 
+=======
+>>>>>>> 3879dbe1042641214e49bddc406b9327315c597d
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
