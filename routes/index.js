@@ -2,9 +2,17 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
+router.get('/', ensureAuthenticated, function(req, res) {
+    res.render('index');
+})
 
-router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
+function ensureAuthenticated(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    } else {
+        req.flash('error_msg', 'You are not logged in');
+        res.redirect('/user/register');
+    }
+}
 
 module.exports = router;
