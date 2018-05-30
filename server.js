@@ -10,21 +10,19 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mysql = require('mysql');
 
-<<<<<<< HEAD
-var db = require("./models");
-var PORT = process.env.PORT || 8080;
-
-//routes 
-=======
->>>>>>> 3879dbe1042641214e49bddc406b9327315c597d
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+// TRASH TALKE ROUTES
+var routesTrash = require("./controllers/fanPosts_controller");
+app.use(routesTrash);
+
 
 var db = mysql.createConnection({
    host     : 'localhost',
    user     : 'root',
-   password : 'BlackTankshark8',
-   database : 'fans'
+   password : 'root',
+   database : 'post_db'
  });
 
  db.connect((err) => {
@@ -33,8 +31,25 @@ var db = mysql.createConnection({
    }
    console.log('MySql Connected...');
  })
+
+//  Trash Talk Handlebars Code
+ var exphbs = require("express-handlebars");
+ app.engine("handlebars", exphbs({
+   defaultLayout: "trash-main"
+}));
+   app.set("view engine", "handlebars");
+
+
 // Init App
 var app = express();
+
+
+// trash talk use code
+app.use(express.static("public"));
+app.use(express.static("public/assets/images/teams"));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 app.get('/createdb', (req, res) => {
   let sql = 'CREATE DATABASE fans';
