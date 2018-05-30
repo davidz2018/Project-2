@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var bar = sequelize.define('bar', {
-    bar_name: DataTypes.STRING
+  var Bar = sequelize.define('Bar', {
+    barName: DataTypes.STRING
   }, {});
-  bar.associate = function(models) {
-  
+  Bar.associate = function(models) {
+    Bar.belongsToMany(models.Sport, {through: 'teamBar'});
   };
-  return bar;
+  return Bar;
 };
