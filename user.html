@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <style>
-   body {
+   /*body {
        background-color: white;
-   }
+   }*/
    
     .wrapper {
   display: grid;
@@ -102,12 +102,12 @@ img {
 
 }
 
-/*footer {
-    background-color: #0076B6;
+footer {
+   
     height: 100px;
     padding-top: 25px;
     padding-bottom: 25px
-}*/
+}
 
     </style>
 </head>
@@ -128,6 +128,8 @@ img {
           <button type="button" class="btn btn-outline-primary">Log Out</button>
             </div>
   </nav>
+  <br>
+  
 
   <div class="container">     
   <div class="wrapper">
@@ -192,9 +194,11 @@ img {
                
               </div>
   </div>
+  <br>
+ 
    <!-- Footer -->
-	<footer>
-            <div class="py-5 bg-dark">
+	<footer id="footer">
+            <div class="">
                 <p class="m-0 text-center text-white">&copy; Project 2 2018</p>
             </div>
         </footer> 
@@ -1366,7 +1370,7 @@ var data = [
     "AverageDraftPositionPPR": 187.1,
     "HeadCoach": "Bill Belichick",
     "OffensiveCoordinator": "Josh McDaniels",
-    "DefensiveCoordinator": "Matt Patricia",
+    "DefensiveCoordinator": "",
     "SpecialTeamsCoach": "Joe Judge",
     "OffensiveScheme": "3WR",
     "DefensiveScheme": "4-3",
@@ -1981,7 +1985,7 @@ return data.find(function(item) {
     return item.Key === Key;
 });
 }
-console.log(getTeam(inputChange));
+console.log("#"+ getTeam(inputChange).PrimaryColor);
 
 $("#conference").html("Conference: " + getTeam(inputChange).Conference);
 $("#division").html("Division: " + getTeam(inputChange).Division);
@@ -1992,6 +1996,9 @@ $("#stc").html("Special Teams: " + getTeam(inputChange).SpecialTeamsCoach);
 $("#stadium").html("Stadium: " + getTeam(inputChange).StadiumDetails.Name);
 $(".teamLogo").attr("src", getTeam(inputChange).WikipediaLogoUrl);
 $(".teamName").attr("src", getTeam(inputChange).WikipediaWordMarkUrl);
+$("footer").css("background-color" , "#"+ getTeam(inputChange).PrimaryColor);
+$("body").css("background-color" , "#"+ getTeam(inputChange).SecondaryColor);
+
 
 function getSched(AwayTeam) {
 
