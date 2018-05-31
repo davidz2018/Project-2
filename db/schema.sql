@@ -3,3 +3,4 @@ DROP DATABASE IF EXISTS fans;
 -- Creates the "fans" database --
 CREATE DATABASE fans;
 
+

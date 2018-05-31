@@ -43,7 +43,7 @@
   background-color: white;
 
 }
-.three {
+/*.three {
   grid-column: 1;
   grid-row: 3 / 6;
   border-color: black;
@@ -51,10 +51,10 @@
   border-style: dashed;
   padding: 5px;
   background-color: white;
-}
+}*/
 .four {
-  grid-column: 3;
-  grid-row: 4;
+  grid-column: 1;
+  grid-row: 3;
   border-color: black;
   border: 1px;
   border-style: dashed;
@@ -63,7 +63,7 @@
 }
 .five {
   grid-column: 2;
-  grid-row: 5;
+  grid-row: 4;
   border-color: black;
   border: 1px;
   border-style: dashed;
@@ -72,7 +72,7 @@
 }
 .six {
   grid-column: 3;
-  grid-row: 5;
+  grid-row: 4;
   border-color: black;
   border: 1px;
   border-style: dashed;
@@ -80,7 +80,7 @@
   background-color: white;
 }
 .seven {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 4;
   border-color: black;
   border: 1px;
@@ -94,7 +94,24 @@
   /*border-color: black;
   border: 1px;
   border-style: dashed;*/
-  padding-top: 1%
+  padding-top: 1%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+    
+}
+.nine {
+  grid-column: 2 / 3;
+  grid-row: 5;
+  /*border-color: black;
+  border: 1px;
+  border-style: dashed;*/
+  padding-top: 1%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 img {
@@ -103,7 +120,6 @@ img {
 }
 
 footer {
-   
     height: 100px;
     padding-top: 25px;
     padding-bottom: 25px
@@ -117,32 +133,130 @@ footer {
             <div class="container">
                 <form class="form-inline">
                         <!--<img src="https://cdn5.f-cdn.com/contestentries/419315/17615651/5758567cad64d_thumb900.jpg" width="30" height="30" class="d-inline-block align-top" alt="">-->
-                        <img class="teamLogo" src="" alt="" width="30" height="30" class="d-inline-block align-top" alt="">
-                        Welcome: Username
+                        <!--<img class="teamLogo" src="" alt="" width="30" height="30" class="d-inline-block align-top" alt="">
+                        Welcome: Username-->
                         <br>
                        
-                        <input id="locationSearch" class="form-control mr-sm-2" type="search" placeholder="Team" aria-label="Search">
-                        <button id="searchButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Test</button>
+                        <!--<input id="locationSearch" class="form-control mr-sm-2" type="search" placeholder="Team" aria-label="Search">
+                        <button id="searchButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Test</button>-->
+                        <div class=class="form-control mr-sm-2">
+                                <!--<label for="validationDefault05">Select Team</label> -->
+                                <select class="form-control" id="Team">
+                                    <!--$(#Team).val()-->
+                                    <option selected>
+                                        Select NFL Team...
+                                    </option>
+                                    <option value="ARI">
+                                        Arizona Cardinals
+                                    </option>
+                                    <option value="ATL">
+                                        Atlanta Falcons
+                                    </option>
+                                    <option value="BAL">
+                                        Baltimore Ravens
+                                    </option>
+                                    <option value="BUF">
+                                        Buffalo Bills
+                                    </option>
+                                    <option value="CAR">
+                                        Carolina Panthers
+                                    </option>
+                                    <option value="CHI">
+                                        Chicago Bears
+                                    </option>
+                                    <option value="CIN">
+                                        Cincinnati Bengals
+                                    </option>
+                                    <option value="CLE">
+                                        Cleveland Browns
+                                    </option>
+                                    <option value="DAL">
+                                        Dallas Cowboys
+                                    </option>
+                                    <option value="DEN">
+                                        Denver Broncos
+                                    </option>
+                                    <option value="DET">
+                                        Detroit Lions
+                                    </option>
+                                    <option value="GB">
+                                        Green Bay Packers
+                                    </option>
+                                    <option value="HOU">
+                                        Houston Texans
+                                    </option>
+                                    <option value="IND">
+                                        Indianapolis Colts
+                                    </option>
+                                    <option value="JAX">
+                                        Jacksonville Jaguars
+                                    </option>
+                                    <option value="KC">
+                                        Kansas City Chiefs
+                                    </option>
+                                    <option value="LAR">
+                                        Los Angeles Rams
+                                    </option>
+                                    <option value="LAC">
+                                        Los Angeles Chargers
+                                    </option>
+                                    <option value="MIA">
+                                        Miami Dolphins
+                                    </option>
+                                    <option value="MIN">
+                                        Minnesota Vikings
+                                    </option>
+                                    <option value="NE">
+                                        New England Patriots
+                                    </option>
+                                    <option value="NO">
+                                        New Orleans Saints
+                                    </option>
+                                    <option value="NYG">
+                                        New York Giants
+                                    </option>
+                                    <option value="NYJ">
+                                        New York Jets
+                                    </option>
+                                    <option value="OAK">
+                                        Oakland Raiders
+                                    </option>
+                                    <option value="PHI">
+                                        Philadelphia Eagles
+                                    </option>
+                                    <option value="PIT">
+                                        Pittsburgh Steelers
+                                    </option>
+                                    <option value="SF">
+                                        San Francisco 49ers
+                                    </option>
+                                    <option value="SEA">
+                                        Seattle Seahawks
+                                    </option>
+                                    <option value="TB">
+                                        Tampa Bay Buccaneers
+                                    </option>
+                                    <option value="TEN">
+                                        Tennessee Titans
+                                    </option>
+                                    <option value="WAS">
+                                        Washington Redskins
+                                    </option>
+                                </select>
+                            </div>
                       </form>
               </a>
-          <button type="button" class="btn btn-outline-primary">Log Out</button>
+          <button type="button" class="btn btn-outline-danger">Trash Talk</button>
             </div>
   </nav>
   <br>
+
+  <div></div>
   
 
   <div class="container">     
   <div class="wrapper">
-                <div class="one">Team Detail
-                    <p id="teamName"></p>
-                    <p id="conference"></p>
-                    <p id="division"></p>
-                    <p id="headCoach"></p>
-                    <p id="oc"></p>
-                    <p id="dc"></p>
-                    <p id="stc"></p>
-                    <p id="stadium"></p>
-                </div>
+                
                 <div class="two">News
                         <p id="title0"></p>
                         <sup id="author0"></sup>
@@ -165,7 +279,7 @@ footer {
                         <sup id="date4"></sup>
                         <p id="content4"></p>
                 </div>
-                <div class="three">Forum
+                <!--<div class="three">Forum
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
                     <br>
                     <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -175,20 +289,36 @@ footer {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde explicabo commodi.</p>
                     <br>
                     <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>-->
+              
+                <div class="one">Team Detail
+                        <p id="teamName"></p>
+                        <p id="conference"></p>
+                        <p id="division"></p>
+                        <p id="headCoach"></p>
+                        <p id="oc"></p>
+                        <p id="dc"></p>
+                        <p id="stc"></p>
+                        <p id="stadium"></p>
                 </div>
                 <div class="four">Away Games</div>
-                <div class="five">Fans
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur veritatis quos dolorum rerum, distinctio aliquam reprehenderit ab repellat sit ratione tempore repellendus numquam porro esse itaque recusandae eos? Odit nisi enim temporibus eaque ratione delectus est. Dolorum, quia incidunt ducimus expedita molestiae ea quam eaque?</p>
-                </div>
-                
-                <div class="six">Bars
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, itaque hic cumque beatae veritatis maxime tempora magni nostrum dolore voluptatibus quos unde vero id excepturi.</p>
-                </div>
                 <div class="seven">Home Games
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis vel ducimus eos laborum voluptatem expedita autem, sit dolor sapiente id libero ea maiores quidem, excepturi officiis ratione at similique error.</p>
                 </div>
+               
+
+                <div class="five">Fans
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur veritatis quos dolorum rerum, distinctio aliquam reprehenderit ab repellat sit ratione tempore repellendus numquam porro esse itaque recusandae eos? Odit nisi enim temporibus eaque ratione delectus est. Dolorum, quia incidunt ducimus expedita molestiae ea quam eaque?</p>
+                    </div>
+                <div class="six">Bars
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, itaque hic cumque beatae veritatis maxime tempora magni nostrum dolore voluptatibus quos unde vero id excepturi.</p>
+                    </div>
+                
                 <div class="eight">
-                        <img class="teamName" src="" alt="">
+                        <img id="Name" src="" alt="">
+                        </div>
+                <div class="nine">
+                <img id="teamLogo" src="" alt="">
                 </div>
 
                
@@ -196,29 +326,27 @@ footer {
   </div>
   <br>
  
-   <!-- Footer -->
+    <!-- Footer -->
 	<footer id="footer">
-            <div class="">
-                <p class="m-0 text-center text-white">&copy; Project 2 2018</p>
-            </div>
-        </footer> 
+        <div class="">
+            <p class="m-0 text-center text-white">&copy; Project 2 2018</p>
+        </div>
+    </footer> 
 
     <script type="text/javascript">
-                $(document).on("click", "#searchButton", function(event){
+                $(document).on("click", function(event){
                     event.preventDefault();
                     console.log(event);
                 
-                    var inputChange = $("#locationSearch").val();
+                    var inputChange = $("#Team").val();
                     
                 
                     console.log(inputChange);
-    $(function() {
-        //var params = {
-            // Request parameters
-            
-        //};
-
-        var team = inputChange
+        
+                    $(function() {
+        
+        
+                var team = inputChange
       
         $.ajax({
             url: "https://api.fantasydata.net/v3/nfl/stats/JSON/NewsByTeam/" + team,
@@ -236,7 +364,6 @@ footer {
         })
         .done(function(data) {
             console.log(data);
-
 
 $("#title0").html("Headline: " + data[0].Title);
 $("#author0").html("Author: " + data[0].Author);
@@ -266,53 +393,10 @@ $("#content4").html(data[4].Content);
         });
     });
 
- //API call however need to be able to set paramter to pull team data
- $(function() {
-        //var params = {
-            // Request parameters
-        //};
+//TEAM DATA FOR: TEAM DETAILS, COLORS AND IMAGES
+function getTeam(Key) {
 
-        var key = inputChange
-      
-        $.ajax({
-            url: "https://api.fantasydata.net/v3/nfl/stats/JSON/Teams/2018?Key=" + key,
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","710f03748d36420280526d758e56e062");
-            },
-            type: "GET",
-            // Request body
-            data: "{body}",
-        })
-        .done(function(data) {
-            console.log(data);
-            console.log(key);
-           
-           // $("#conference").html("Conference: " + data[10].Conference);
-           // $("#division").html("Division: " + data[10].Division);
-           // $("#headCoach").html("Head Coach: " + data[10].HeadCoach);
-           // $("#oc").html("Offensive Coordinator: " + data[10].OffensiveCoordinator);
-           // $("#dc").html("Defensive Coordinator: " + data[10].DefensiveCoordinator);
-           // $("#stc").html("Special Teams: " + data[10].SpecialTeamsCoach);
-           // $("#stadium").html("Stadium: " + data[10].StadiumDetails.Name);
-           // $(".teamLogo").attr("src", data[10].WikipediaLogoUrl);
-           // $(".teamName").attr("src", data[10].WikipediaWordMarkUrl);
-        })
-        .fail(function() {
-            alert("error");
-        });
-    });
-
-    
-
-    function getTeam(Key) {
-
-// Hardcode static team data 
-//var data = [
- //   {key: "DET", color: "blue"},
-   // {key: "ARI", color: "red"}
-//];
-
+var key = inputChange
 var data = [
 {
     "Key": "ARI",
@@ -409,7 +493,7 @@ var data = [
     "YahooPlayerID": null,
     "StadiumDetails": {
       "StadiumID": 25,
-      "Name": "Georgia Dome",
+      "Name": "Mercedes-Benz Stadium",
       "City": "Atlanta",
       "State": "GA",
       "Country": "USA",
@@ -761,7 +845,7 @@ var data = [
     "TertiaryColor": "FFFFFF",
     "QuaternaryColor": "00338D",
     "WikipediaLogoUrl": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/15\/Dallas_Cowboys.svg",
-    "WikipediaWordMarkUrl": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/be\/Cowboys_wordmark.svg",
+    "WikipediaWordMarkUrl": "http://clipartmag.com/images/dallas-cowboys-png-19.png",
     "GlobalTeamID": 9,
     "DraftKingsName": "Cowboys ",
     "DraftKingsPlayerID": 331,
@@ -1190,7 +1274,7 @@ var data = [
     "YahooPlayerID": null,
     "StadiumDetails": {
       "StadiumID": 14,
-      "Name": "Qualcomm Stadium",
+      "Name": "StubHub Center",
       "City": "San Diego",
       "State": "CA",
       "Country": "USA",
@@ -1994,8 +2078,8 @@ $("#oc").html("Offensive Coordinator: " + getTeam(inputChange).OffensiveCoordina
 $("#dc").html("Defensive Coordinator: " + getTeam(inputChange).DefensiveCoordinator);
 $("#stc").html("Special Teams: " + getTeam(inputChange).SpecialTeamsCoach);
 $("#stadium").html("Stadium: " + getTeam(inputChange).StadiumDetails.Name);
-$(".teamLogo").attr("src", getTeam(inputChange).WikipediaLogoUrl);
-$(".teamName").attr("src", getTeam(inputChange).WikipediaWordMarkUrl);
+$("#teamLogo").attr("src", getTeam(inputChange).WikipediaLogoUrl);
+$("#Name").attr("src", getTeam(inputChange).WikipediaWordMarkUrl);
 $("footer").css("background-color" , "#"+ getTeam(inputChange).PrimaryColor);
 $("body").css("background-color" , "#"+ getTeam(inputChange).SecondaryColor);
 
@@ -2050,11 +2134,6 @@ function getSched(AwayTeam) {
 
 
 }
-
-
-
-
-
 })
 
 
