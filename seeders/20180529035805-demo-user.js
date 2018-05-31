@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 'use strict';
 
 module.exports = {
@@ -19,4 +22,8 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
       return queryInterface.bulkDelete('Users', null, {});
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
