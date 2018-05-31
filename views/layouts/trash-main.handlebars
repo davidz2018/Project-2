@@ -62,7 +62,10 @@
   border-style: dashed;
   padding: 5px;
   background-color: white;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 }
 .three {
   grid-column: 1;
@@ -117,19 +120,28 @@
   border-style: dashed;*/
   padding-top: 1%
 }
+<<<<<<< HEAD
+img {
+    max-width: 100%;
+}
+=======
 
 img {
     max-width: 100%;
 
 }
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 footer {
    
     height: 100px;
     padding-top: 25px;
     padding-bottom: 25px
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
     </style>
 </head>
 <body>
@@ -150,7 +162,10 @@ footer {
             // Request parameters
             
         //};
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
         var team = inputChange
       
         $.ajax({
@@ -169,8 +184,11 @@ footer {
         })
         .done(function(data) {
             console.log(data);
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 $("#title0").html("Headline: " + data[0].Title);
 $("#author0").html("Author: " + data[0].Author);
 $("#date0").html("Date: " + data[0].Updated);
@@ -192,19 +210,28 @@ $("#author4").html("Author: " + data[4].Author);
 $("#date4").html("Date: " + data[4].Updated);
 $("#content4").html(data[4].Content);
         
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
         })
         .fail(function() {
             console.log("error");
         });
     });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
  //API call however need to be able to set paramter to pull team data
  $(function() {
         //var params = {
             // Request parameters
         //};
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
         var key = inputChange
       
         $.ajax({
@@ -235,17 +262,25 @@ $("#content4").html(data[4].Content);
             alert("error");
         });
     });
+<<<<<<< HEAD
+    
+    function getTeam(Key) {
+=======
 
     
 
     function getTeam(Key) {
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 // Hardcode static team data 
 //var data = [
  //   {key: "DET", color: "blue"},
    // {key: "ARI", color: "red"}
 //];
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 var data = [
 {
     "Key": "ARI",
@@ -1913,13 +1948,19 @@ var data = [
       "GeoLong": -76.864479
     }
   }]
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 return data.find(function(item) {
     return item.Key === Key;
 });
 }
 console.log("#"+ getTeam(inputChange).PrimaryColor);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 $("#conference").html("Conference: " + getTeam(inputChange).Conference);
 $("#division").html("Division: " + getTeam(inputChange).Division);
 $("#headCoach").html("Head Coach: " + getTeam(inputChange).HeadCoach);
@@ -1931,10 +1972,14 @@ $(".teamLogo").attr("src", getTeam(inputChange).WikipediaLogoUrl);
 $(".teamName").attr("src", getTeam(inputChange).WikipediaWordMarkUrl);
 $("footer").css("background-color" , "#"+ getTeam(inputChange).PrimaryColor);
 $("body").css("background-color" , "#"+ getTeam(inputChange).SecondaryColor);
+<<<<<<< HEAD
+function getSched(AwayTeam) {
+=======
 
 
 function getSched(AwayTeam) {
 
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
     var data = [
     {
     "GameKey": "201810126",
@@ -1976,6 +2021,16 @@ function getSched(AwayTeam) {
       "GeoLong": -75.167469
     }
   }]
+<<<<<<< HEAD
+  return data.find(function(item) {
+    return item.AwayTeam === AwayTeam;
+});
+}
+})
+</script>
+</body>
+</html>
+=======
 
   return data.find(function(item) {
     return item.AwayTeam === AwayTeam;
@@ -1995,4 +2050,8 @@ function getSched(AwayTeam) {
 </body>
 </html>
 
+<<<<<<< HEAD:views/layouts/trash-main.handlebars
 >>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0:views/layouts/main.handlebars
+=======
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
+>>>>>>> 044ac42ac9413e47c989b9fdb0f71e7c68bcaacf:views/layouts/main.handlebars

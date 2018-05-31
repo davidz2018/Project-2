@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Project 2</a> <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+        <form class="form-inline">
+            <div class="form-group">
+                <input class="form-control" id="inputEmail" placeholder="Email" type="email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="inputPassword" placeholder="Password" type="password">
+            </div><button class="btn btn-primary" type="submit">Login</button>
+        </form>
+    </div>
+</nav><br>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- user profile details - on the left side of the screen -->
+        <div class="col-sm-8">
+            <img src="LAC.jpg" alt="TEAM LOGO" class="img-thumbnail">               
+            <h4>Los Angeles Chargers</h4>
+            <h6>Fan's Hometown: San Diego, CA</h6>
+            <h6>Screen Name: Beavis Jones</h6>
+        </div>
+
+        <div class="row">
+            <div class="col-sm enter_section">
+                <form action="/posts/create" method="POST">
+                    <label for=""><h6>Enter a Post Title</h6><input type="text" class="form-control" name="post_title" value="" id="enter_title"></label><br>
+                    <label for=""><h6>Enter your Screen Name</h6><input type="text" class="form-control" name="fan_name" value="" id="enter_name"></label><br>
+                    <label for=""><h6>Enter your Post</h6>
+                    <div class="input-group mb-3">
+
+                        <textarea type="text" class="form-control" name="post_content" id="enter_text" rows="4S" aria-label="With textarea"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block" id="text-enter-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+		{{!-- POST AREA --}}
+		<div class="col-sm" class="task">
+            <h3>Welcome to Trash Talk Central!</h3>
+            </span>
+            <br>
+            <h4 class="display-5">Recent Posts</h4>
+			<div class="row">
+                {{#each post}}
+                {{#unless this.post_it}}
+	    		<table class="table table-bordered">
+                    <tbody>
+                    <thead>
+                        <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Post</th>
+                        <th scope="col">Fan Name</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                        <th scope="row">{{this.post_title}}</th>
+                        <td colspan="2">{{this.post_content}}</td>
+                        <td colspan="2">{{this.fan_name}}</td>
+                        </tr>
+                     </tbody>
+                </table>            
+                
+			{{/unless}}
+			{{/each}}
+			</div>
+		</div>
+	</div>
+				
+</div> <!-- Content/Post Container -->
+<<<<<<< HEAD
+<br>
+=======
+<br>
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
