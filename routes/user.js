@@ -1,37 +1,10 @@
-var express = require('express');
-var router = express.Router();
+var db = require("../models");
 
-router.get('/register', function(req, res) {
-    res.render('register');
-});
-
-router.get('/login', function(req, res) {
-    res.render('login');
-});
-
-router.post('/register', function(req, res) {
-    var name = req.body.name;
-    var email =req.body.email;
-    var username = req.body.username;
-    var password = req.body.password;
-    
-    req.checkBody('name', 'Name is required').notEmpty();
-    req.checkBody('email', 'Email is required').notEmpty();
-    req.checkBody('email', 'Email is not valid').isEmail();
-    req.checkBody('username', 'Username is required').notEmpty();
-    req.checkBody('password', 'Password is required').notEmpty();
-    
-    var errors = req.validationErrors();
-
-    if(errors) {
-        res.render('register', {
-            errors:errors
-        })
-    } else{
-        var newUser = new user
-    }
-});
-
-
-
-module.exports = router;
+module.exports = function(app) {
+    app.post("/api/fan", function(req, res) {
+        console.log(req.body);
+        db.Fan.create(req.body).then(function(dbFan) {
+            res.json(dbFan);
+        });
+    });
+};

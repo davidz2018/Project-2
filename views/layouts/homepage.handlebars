@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<title>Home</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Project 2</a> <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<form class="form-inline">
+				<div class="form-group">
+					<input class="form-control" id="inputEmail" placeholder="Email" type="email">
+				</div>
+				<div class="form-group">
+					<input class="form-control" id="inputPassword" placeholder="Password" type="password">
+				</div><button class="btn btn-primary" type="submit">Login</button>
+			</form>
+		</div>
+	</nav>
+	<div class="carousel-item active" id="img" style="background-image: url('https://www.tbo.com/storyimage/TB/20140612/ARTICLE/140619766/EP/1/4/EP-140619766.jpg')"></div>
+	<div id="comingSoon">
+		<h2>Welcome to Project 2</h2><br>
+		<div>
+			<h3>Feature One</h3>
+			<p>Lorem ipsum dolor sit amet.</p>
+			<h3>Feature Two</h3>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique ad, porro perferendis quas in ratione ex voluptatem. Voluptatibus, sint nulla?</p>
+			<h3>Feature Three</h3>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, accusantium blanditiis. Est consequatur incidunt non.</p>
+		</div>
+	</div>
+	<div class="login-box">
+		<img class="avatar" src="https://cdn5.f-cdn.com/contestentries/419315/17615651/5758567cad64d_thumb900.jpg">
+		<h1 id="su">Sign Up!</h1>
+		<!-- need auth0 details -->
+		<form>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="validationDefault01">First Name</label> <input class="form-control" id="FirstName" placeholder="First Name" 
+					required type="text">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="validationDefault02">Last Name</label> <input class="form-control" id="LastName" placeholder="Last Name" 
+					required type="text">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="validationDefault03">Email</label> <input class="form-control" id="Email" placeholder="Email" 
+					required type="email">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="validationDefault04">Password</label> <input class="form-control" id="Password" placeholder="Password" 
+					required type="password">
+				</div>
+				<div class="col-md-12">
+					<label for="validationDefault05">Select Team</label> 
+					<select class="form-control" id="Team">
+						<!--$(#Team).val()-->
+						<option selected>
+							Select NFL Team...
+						</option>
+						<option value="cardinals">
+							Arizona Cardinals
+						</option>
+						<option value="falcons">
+							Atlanta Falcons
+						</option>
+						<option value="ravens">
+							Baltimore Ravens
+						</option>
+						<option value="bills">
+							Buffalo Bills
+						</option>
+						<option value="panthers">
+							Carolina Panthers
+						</option>
+						<option value="bears">
+							Chicago Bears
+						</option>
+						<option value="bengels">
+							Cincinnati Bengals
+						</option>
+						<option value="browns">
+							Cleveland Browns
+						</option>
+						<option value="cowboys">
+							Dallas Cowboys
+						</option>
+						<option value="broncos">
+							Denver Broncos
+						</option>
+						<option value="lions">
+							Detroit Lions
+						</option>
+						<option value="packers">
+							Green Bay Packers
+						</option>
+						<option value="texans">
+							Houston Texans
+						</option>
+						<option value="colts">
+							Indianapolis Colts
+						</option>
+						<option value="jaguars">
+							Jacksonville Jaguars
+						</option>
+						<option value="chiefs">
+							Kansas City Chiefs
+						</option>
+						<option value="rams">
+							Los Angeles Rams
+						</option>
+						<option value="chargers">
+							Los Angeles Chargers
+						</option>
+						<option value="dolphins">
+							Miami Dolphins
+						</option>
+						<option value="vikings">
+							Minnesota Vikings
+						</option>
+						<option value="patriots">
+							New England Patriots
+						</option>
+						<option value="saints">
+							New Orleans Saints
+						</option>
+						<option value="giants">
+							New York Giants
+						</option>
+						<option value="jets">
+							New York Jets
+						</option>
+						<option value="raiders">
+							Oakland Raiders
+						</option>
+						<option value="eagles">
+							Philadelphia Eagles
+						</option>
+						<option value="steelers">
+							Pittsburgh Steelers
+						</option>
+						<option value="49ers">
+							San Francisco 49ers
+						</option>
+						<option value="seahawks">
+							Seattle Seahawks
+						</option>
+						<option value="buccaneers">
+							Tampa Bay Buccaneers
+						</option>
+						<option value="titans">
+							Tennessee Titans
+						</option>
+						<option value="redskins">
+							Washington Redskins
+						</option>
+					</select>
+				</div>
+			</div>
+			<br>
+			<center>
+				<button class="btn btn-primary" type="submit">Submit</button>
+			</center>
+		</form>
+    </div>
+    <!-- Footer -->
+	<footer class="py-5 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">&copy; Project 2 2018</p>
+        </div>
+	</footer> 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+	</script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
+	</script>
+</body>
+</html>
