@@ -13,7 +13,6 @@ var db = {};
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
 // TRASH TALKE ROUTES
 var routesTrash = require("./controllers/fanPosts_controller");
 app.use(routesTrash);
