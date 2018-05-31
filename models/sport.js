@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     league: DataTypes.STRING
   }, {});
   Sport.associate = function(models) {
-    Sport.belongsToMany(models.Bar, {through: 'teamBar'});
+    //Sport.belongsToMany(models.Bar, {through: 'teamBar'});
   };
   return Sport;
 };
