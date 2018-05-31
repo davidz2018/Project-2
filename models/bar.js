@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     barName: DataTypes.STRING
   }, {});
   Bar.associate = function(models) {
-    Bar.belongsToMany(models.Sport, {through: 'teamBar'});
+    //Bar.belongsToMany(models.Sport, {through: 'teamBar'});
   };
   return Bar;
 };
