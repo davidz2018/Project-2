@@ -35,7 +35,6 @@
   "bugs": {
     "url": "https://github.com/davidz2018/Project-2/issues"
   },
-<<<<<<< HEAD
   "homepage": "https://github.com/davidz2018/Project-2#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -55,7 +54,4 @@
     "sequelize": "^4.37.10"
   },
   "devDependencies": {}
-=======
-  "homepage": "https://github.com/davidz2018/Project-2#readme"
->>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 }
