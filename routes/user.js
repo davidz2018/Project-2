@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+var db = require("../models");
+
+module.exports = function(app) {
+    app.post("/api/fan", function(req, res) {
+        console.log(req.body);
+        db.Fan.create(req.body).then(function(dbFan) {
+            res.json(dbFan);
+        });
+    });
+};
+=======
 var express = require('express');
 var router = express.Router();
 var path = require('path');
@@ -101,3 +113,4 @@ router.get('/logout', function(req, res) {
 });
 
 module.exports = router;
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0

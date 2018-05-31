@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+module.exports = function(sequelize, DataTypes) {
+=======
   module.exports = function(sequelize, DataTypes) {
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
     var Fan = sequelize.define("Fan", {
       fan_name: DataTypes.STRING,
       team_aff: DataTypes.TEXT,

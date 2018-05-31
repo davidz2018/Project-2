@@ -48,7 +48,11 @@ app.get('/createdb', (req, res) => {
 
 // View Engine
 app.set('views', path.join(__dirname, 'views'));
+<<<<<<< HEAD
+app.engine('handlebars', exphbs({defaultLayout:'homepage'}));
+=======
 app.engine('handlebars', exphbs({defaultLayout:'layout'}));
+>>>>>>> 886afc09258a91a37d64a8c85d6dfe2ec5f1e7c0
 app.set('view engine', 'handlebars');
 
 // BodyParser Middleware
