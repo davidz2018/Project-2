@@ -11,7 +11,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
+    },
+
+    fan_name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      len: [1]
+    },
+    team_name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      len: [1]
     }
+
   });
 
 Post.associate = function(models) {
@@ -22,6 +34,9 @@ Post.associate = function(models) {
         allowNull: false
       }
     });
+
+
+
   };
   
   return Post;
